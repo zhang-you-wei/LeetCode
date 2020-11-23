@@ -2,7 +2,7 @@ package yowei.leetCode;
 
 import java.util.*;
 
-public class N046Permutations {
+public class No46Permutations2 {
     private List<List<Integer>> res;
 
     public List<List<Integer>> permute(int[] nums) {

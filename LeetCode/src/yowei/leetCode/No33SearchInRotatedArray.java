@@ -1,6 +1,6 @@
 package yowei.leetCode;
 
-public class N033SearchInRotatedArray {
+public class No33SearchInRotatedArray {
     public int search(int[] nums, int target) {
         int length = nums.length;
 
@@ -28,7 +28,7 @@ public class N033SearchInRotatedArray {
 
 
     public static void main(String[] args) {
-        N033SearchInRotatedArray search = new N033SearchInRotatedArray();
+        No33SearchInRotatedArray search = new No33SearchInRotatedArray();
         int[] a = {4,5,6,7,0,1,2};
         int res = search.search(a, 0);
         System.out.println(res);
