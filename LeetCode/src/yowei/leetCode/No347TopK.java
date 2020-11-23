@@ -2,7 +2,7 @@ package yowei.leetCode;
 
 import java.util.*;
 
-public class No347 {
+public class No347TopK {
     public int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         List<Integer> index = new ArrayList<>();
@@ -39,7 +39,7 @@ public class No347 {
 
     public static void main(String[] args) {
         int[] x  = {3,0,1,0};
-        int[] res= new No347().topKFrequent(x,1);
+        int[] res= new No347TopK().topKFrequent(x,1);
         System.out.println(Arrays.toString(res));
     }
 }

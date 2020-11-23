@@ -2,7 +2,7 @@ package yowei.leetCode;
 
 import java.util.Arrays;
 
-public class ColorSort {
+public class No75ColorSort {
     public void sortColors(int[] nums) {
         /*int red=0,white=0,blue=0;
 
@@ -50,7 +50,7 @@ public class ColorSort {
 
     public static void main(String[] args) {
         int[] a = {0,2,0,1,0,2,1,1,0,2,1,0,2,2,0};
-        new ColorSort().sortColors(a);
+        new No75ColorSort().sortColors(a);
 
     }
 }

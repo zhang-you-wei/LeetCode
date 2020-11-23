@@ -2,7 +2,7 @@ package yowei.leetCode;
 
 import java.util.Arrays;
 
-public class ReverseString {
+public class No344ReverseString {
     public void reverseString(char[] s) {
         int size = s.length;
         if(size <= 1) return;
@@ -19,6 +19,6 @@ public class ReverseString {
 
     public static void main(String[] args) {
         char[] a = {'h','e','l','l','o'};
-        new ReverseString().reverseString(a);
+        new No344ReverseString().reverseString(a);
     }
 }

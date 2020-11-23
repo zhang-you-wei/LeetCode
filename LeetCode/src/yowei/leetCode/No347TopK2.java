@@ -1,9 +1,8 @@
 package yowei.leetCode;
 
-import java.beans.IntrospectionException;
 import java.util.*;
 
-public class TopK {
+public class No347TopK2 {
 
     public int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -51,7 +50,7 @@ public class TopK {
     public static void main(String[] args) {
         int[] inp = {1,2,3,1,2,5,4,8,5,2,4,1,2,5,7,3,1,5,4,3,1,4,2,3,5,1,4,5,3,6,7,4,8,4,6,7,1,3,4,7,2,5,4,};
         int[] b = {2,2,1,1,1,4,4,4,4,3};
-        int[] res = new TopK().topKFrequent(b, 2);
+        int[] res = new No347TopK2().topKFrequent(b, 2);
         System.out.println(Arrays.toString(res));
     }
 }

@@ -1,6 +1,6 @@
-package yowei.leetCode.No2;
+package yowei.leetCode.No2AddTwoNums;
 
-public class No2 {
+public class No2AddTwoNums {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode res = new ListNode();
@@ -38,7 +38,7 @@ public class No2 {
         add2.next = new ListNode(6);
         add2.next.next = new ListNode(4);
 
-        ListNode res = new No2().addTwoNumbers(add1, add2);
+        ListNode res = new No2AddTwoNums().addTwoNumbers(add1, add2);
 
         while (res.hasNext()){
             System.out.print(res);

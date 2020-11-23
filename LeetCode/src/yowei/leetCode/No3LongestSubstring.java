@@ -1,13 +1,12 @@
 package yowei.leetCode;
 
 import java.util.HashMap;
-import java.util.HashSet;
 /*
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
 */
 
-public class LongestSubstring {
+public class No3LongestSubstring {
 
 
     //滑动窗口
@@ -36,7 +35,7 @@ public class LongestSubstring {
     public static void main(String[] args) {
         String str = " ";
         System.out.println(str.length());
-        int x = new LongestSubstring().lengthOfLongestSubstring(str);
+        int x = new No3LongestSubstring().lengthOfLongestSubstring(str);
         System.out.println(x);
     }
 }

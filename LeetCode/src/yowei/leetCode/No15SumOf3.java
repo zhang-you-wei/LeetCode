@@ -11,7 +11,7 @@ import java.util.List;
     1、首先进行排序保证不会造成重复结果
     2、固定第一个数，后两个数使用双指针移动使时间复杂度减小为O(n)
  */
-public class SumOf3 {
+public class No15SumOf3 {
     public List<List<Integer>> threeSum(int[] nums) {
 
         Arrays.sort(nums);
@@ -51,7 +51,7 @@ public class SumOf3 {
 
     public static void main(String[] args) {
         int[] nums = {-1,-8,-2,5,2,4,6,2,3,3,1,5,7,5,2,6,9,-3,-7,-6,0,0,0,0,0,0,0,0,-6,-4,-5,-1,-2,-8};
-        SumOf3 sumOf3 = new SumOf3();
+        No15SumOf3 sumOf3 = new No15SumOf3();
         List<List<Integer>> lists = sumOf3.threeSum(nums);
         for (List<Integer> comb:lists) {
             System.out.println(comb);
