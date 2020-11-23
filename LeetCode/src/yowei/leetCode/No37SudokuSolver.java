@@ -1,5 +1,7 @@
 package yowei.leetCode;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -113,10 +115,13 @@ public class No37SudokuSolver {
 
         Scanner scan = new Scanner(System.in);
 
+        BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
+
+
         String rep = "[1-9\\.]{9}";
 
         for (int i = 0; i < 9; i++) {
-            System.out.printf("请数独输入第%d行,空格用.代替\n",i+1);
+            System.out.printf("请数独输入第%d行,空白用.代替\n",i+1);
             String str = scan.nextLine();
             if(!str.matches(rep)) {
                 System.out.println("输入有误，请重新输入");
