@@ -1,4 +1,4 @@
-package yowei.leetCode.array;
+package yowei.leetCode.binarySearch;
 
 /**
  * 在旋转后的数组中查找指定元素

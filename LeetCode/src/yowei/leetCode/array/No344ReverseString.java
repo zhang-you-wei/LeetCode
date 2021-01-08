@@ -1,6 +1,4 @@
-package yowei.leetCode;
-
-import java.util.Arrays;
+package yowei.leetCode.array;
 
 public class No344ReverseString {
     public void reverseString(char[] s) {
@@ -14,11 +12,6 @@ public class No344ReverseString {
             ++head;
             --tail;
         }
-        System.out.println(Arrays.toString(s));
     }
 
-    public static void main(String[] args) {
-        char[] a = {'h','e','l','l','o'};
-        new No344ReverseString().reverseString(a);
-    }
 }

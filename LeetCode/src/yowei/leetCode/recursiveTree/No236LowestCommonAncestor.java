@@ -16,7 +16,7 @@ public class No236LowestCommonAncestor {
      * 先找到其中一个元素，用一个栈记录其路径，然后依次出栈作为根节点判断能否找到第二个元素
      */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        LinkedList<TreeNode> path = new LinkedList<TreeNode>();
+        LinkedList<TreeNode> path = new LinkedList<>();
         TreeNode second = findfirst(root,p,q,path);
         TreeNode curroot = stack.pop();
         if(isfound(curroot,second)) return curroot;
@@ -76,13 +76,13 @@ public class No236LowestCommonAncestor {
     /*#####################################################################################*/
 
     /**
-     * 后序遍历方法：分四种情况：
-     * 1.当 leftleft 和 rightright 同时为空 ：说明 rootroot 的左 / 右子树中都不包含 p,返回 nullnull ；
-     * 2.当 leftleft 和 rightright 同时不为空 ：说明 p, q分列在 rootroot 的 异侧 （分别在 左 / 右子树），因此 rootroot 为最近公共祖先，返回 rootroot ；
-     * 3.当 leftleft 为空 ，rightright 不为空 ：p,q都不在 rootroot 的左子树中，直接返回 rightright 。具体可分为两种情况：
-     *      p,q其中一个在 rootroot 的 右子树 中，此时 rightright 指向 p（假设为 p ）；
-     *      p,q 两节点都在 rootroot 的 右子树 中，此时的 rightright 指向 最近公共祖先节点 ；
-     * 4.当 leftleft 不为空 ， rightright 为空 ：与情况 3. 同理；
+     * 先序遍历方法：分四种情况：
+     * 1.当 left 和 right 同时为空 ：说明 root 的左 / 右子树中都不包含 p,返回 null ；
+     * 2.当 left 和 right 同时不为空 ：说明 p, q分列在 root 的 异侧 （分别在 左 / 右子树），因此 root 为最近公共祖先，返回 root ；
+     * 3.当 left 为空 ，right 不为空 ：p,q都不在 root 的左子树中，直接返回 right 。具体可分为两种情况：
+     *      p,q其中一个在 root 的 右子树 中，此时 right 指向 p（假设为 p ）；
+     *      p,q 两节点都在 root 的 右子树 中，此时的 right 指向 最近公共祖先节点 ；
+     * 4.当 left 不为空 ， right 为空 ：与情况 3. 同理；
      */
      public TreeNode lowestCommonAncestor3(TreeNode root, TreeNode p, TreeNode q) {
          if(root == null || root == p || root == q) return root;

@@ -1,5 +1,8 @@
 package yowei.leetCode.dynamicProgramming;
 
+/**
+ * 最长回文子串
+ */
 public class No5LongestPadSubstring {
     public String longestPalindrome(String s) {
         int length = s.length();

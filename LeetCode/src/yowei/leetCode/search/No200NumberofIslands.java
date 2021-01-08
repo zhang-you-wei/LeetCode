@@ -3,7 +3,7 @@ package yowei.leetCode.search;
 /**
  * 二维平面上进行搜索
  * 每个岛屿就是一棵多叉树
- * 对没个树警醒dfs或bfs
+ * 对没个树进行dfs或bfs
  */
 public class No200NumberofIslands {
     public int numIslands(char[][] grid) {

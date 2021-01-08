@@ -1,4 +1,4 @@
-package yowei.leetCode.array;
+package yowei.leetCode.binarySearch;
 
 import java.util.Arrays;
 

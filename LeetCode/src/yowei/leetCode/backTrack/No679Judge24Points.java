@@ -1,4 +1,4 @@
-package yowei.leetCode;
+package yowei.leetCode.backTrack;
 
 import java.util.*;
 /**

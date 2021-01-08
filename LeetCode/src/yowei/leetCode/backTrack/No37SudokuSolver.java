@@ -1,4 +1,4 @@
-package yowei.leetCode.dynamicProgramming;
+package yowei.leetCode.backTrack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
