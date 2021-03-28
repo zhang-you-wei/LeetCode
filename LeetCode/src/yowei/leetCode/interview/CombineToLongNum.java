@@ -6,7 +6,7 @@ import java.util.*;
  * 百度测试部一面
  * n个数字组成一个最小的长整型数
  */
-public class Solve {
+public class CombineToLongNum {
     public long getnumber(int[] nums){
         PriorityQueue<String> strArr = new PriorityQueue<>(new Comparator<String>() {
             @Override
@@ -28,7 +28,7 @@ public class Solve {
     }
 
     public static void main(String[] args) {
-        Solve solve = new Solve();
+        CombineToLongNum solve = new CombineToLongNum();
         int[] a= {13,6,57,31,8};
         System.out.println(solve.getnumber(a));
     }

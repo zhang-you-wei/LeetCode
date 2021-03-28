@@ -1,6 +1,7 @@
 package yowei.leetCode.array;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * 最短连续乱序子数组
@@ -40,12 +41,12 @@ public class No581SUnsortedConSubarray {
         int l = 0, r = -1;          //r定为-1最后刚好返回0
 
         for(int i=0;i<len;i++){
-            if(max>nums[i]){
+            if(nums[i] < max){          //如果降序了，修改右边界
                 r = i;
             }else{
                 max = nums[i];
             }
-            if(min<nums[len-i-1]){
+            if(nums[len-i-1] > min){        //如果逆序升序了，修改左边界
                 l = len-i-1;
             }else{
                 min = nums[len-i-1];

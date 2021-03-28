@@ -28,13 +28,28 @@ public class No3LongestSubstring {
         return length;
     }
 
+    public int lengthOfLongestSubstring2(String s) {
+        int[] actual =  new int[26];
+        int l = 0,r = 0,maxlength = 0;
+        char[] x = s.toCharArray();
+        for(;r < x.length;r++){
+            while(actual[x[r] - 'a'] != 0){
+                actual[x[l++] - 'a']--;
+            }
+            actual[x[r] - 'a']++;
+            maxlength = Math.max(maxlength,r-l+1);
+        }
+        return maxlength;
+    }
+
+
 
 
 
     public static void main(String[] args) {
-        String str = " ";
+        String str = "  ";
         System.out.println(str.length());
-        int x = new No3LongestSubstring().lengthOfLongestSubstring(str);
-        System.out.println(x);
+        //int x = new No3LongestSubstring().lengthOfLongestSubstring2(str);
+        //System.out.println(x);
     }
 }

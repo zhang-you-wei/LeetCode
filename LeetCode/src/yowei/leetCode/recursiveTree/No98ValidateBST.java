@@ -1,5 +1,7 @@
 package yowei.leetCode.recursiveTree;
 
+import yowei.leetCode.tools.TreeNode;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -9,20 +11,6 @@ import java.util.LinkedList;
  * 进行中序遍历，检验某个节点值是否比该节点之前的的值小
  */
 public class No98ValidateBST {
-
-    static class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-            }
-    }
-
 
     /**
      * 递归法，中序遍历
@@ -51,13 +39,35 @@ public class No98ValidateBST {
 
 
     /**
+     * 中序遍历递归代码优化
+     */
+
+    private long pre = Long.MIN_VALUE;
+
+    public boolean isValidBST3(TreeNode root) {
+        return inorderTraverse2(root);
+    }
+
+    public boolean inorderTraverse2(TreeNode t){
+        if(t == null) return true;
+        boolean l = inorderTraverse2(t.left);
+        if(!l) return false;
+        if(t.val < pre) return false;
+        pre = t.val;
+        boolean r = inorderTraverse2(t.right);
+        return r;
+    }
+
+
+
+    /**
      * 中序遍历使用非递归方式
      */
     public boolean isValidBST2(TreeNode root) {
         Deque<TreeNode> stack = new LinkedList<>();         //利用辅助栈保存节点遍历顺序
-        double pre = -Double.MAX_VALUE;
+        double pre = Long.MIN_VALUE;
 
-        while (!stack.isEmpty() || root!=null){         //关键的判断条件，必须带上root!=null，否则会出现栈已经空了但还有节点为遍历的情况
+        while (!stack.isEmpty() || root!=null){         //关键的判断条件，必须带上root!=null，否则会出现栈已经空了但还有节点未遍历的情况
             while (root!=null){
                 stack.push(root);           //左子节点顺序入栈
                 root = root.left;

@@ -2,7 +2,7 @@ package yowei.leetCode.binarySearch;
 
 /**
  * 在旋转后的数组中查找指定元素
- * 可以使用二分查找，但是查抄条件要细分
+ * 可以使用二分查找，但是查找条件要细分
  */
 public class No33SearchInRotatedArray {
     public int search(int[] nums, int target) {
@@ -17,7 +17,7 @@ public class No33SearchInRotatedArray {
                 return mid;
             }
 
-            //说明在大数堆更长
+            //说明大数堆更长
             if(nums[0] <= nums[mid]){
                 if(target <= nums[mid] && target >= nums[left]) right = mid - 1;
                 else left = mid + 1;

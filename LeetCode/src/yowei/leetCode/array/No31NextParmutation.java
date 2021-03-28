@@ -2,7 +2,7 @@ package yowei.leetCode.array;
 
 import java.util.Arrays;
 /*
-    下一个排列值能够组成的下一个较大的整数
+    下一个排列指能够组成的下一个较大的整数
     指针从后往前移动，直至找到一个下一个元素（ptr-1)比当前指针(ptr)元素小的位置
     将指针位置以后的元素倒序
     找到倒序后排列中第一个大于(ptr-1)的元素位置，交换两者
@@ -41,6 +41,7 @@ public class No31NextParmutation {
             temp = nums[i];
             nums[i] = nums[j];
             nums[j] = temp;
+
             ++i;
             --j;
 

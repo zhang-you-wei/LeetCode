@@ -1,19 +1,13 @@
 package yowei.leetCode.recursiveTree;
 
+import yowei.leetCode.tools.TreeNode;
+import yowei.leetCode.tools.TreeTools;
+
 /**
  * 由前序遍历结果和中序遍历结果得出一个唯一的二叉树
  * 采用递归方法
  */
 public class No105ConstructTree {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -49,10 +43,10 @@ public class No105ConstructTree {
 
     public static void main(String[] args) {
         No105ConstructTree ct = new No105ConstructTree();
-        int[] pre = {3,9,20,15,7};
-        int[] in = {9,3,15,20,7};
+        int[] pre = {1,2,3};
+        int[] in = {3,2,1};
         TreeNode treeNode = ct.buildTree(pre, in);
-        System.out.println(treeNode);
+        System.out.println(TreeTools.printTree(treeNode));
 
     }
 }

@@ -1,5 +1,7 @@
 package yowei.leetCode.recursiveTree;
 
+import yowei.leetCode.tools.TreeNode;
+
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -10,12 +12,6 @@ import java.util.List;
  * 使用广度优先搜索，需要使用辅助队列
  */
 public class No102BTLevelOrderTraversal {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
 

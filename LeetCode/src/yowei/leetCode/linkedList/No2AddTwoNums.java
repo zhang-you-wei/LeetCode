@@ -1,27 +1,13 @@
 package yowei.leetCode.linkedList;
 
-public class No2AddTwoNums {
-    static class ListNode{
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-        public boolean hasNext(){
-            return this.next != null;
-        }
+import yowei.leetCode.tools.ListNode;
 
-        @Override
-        public String toString() {
-            return  val + "->";
-        }
-    }
+public class No2AddTwoNums {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode res = new ListNode();
         add(l1,l2,res,0);
-        if(res.hasNext()) return res.next;
-        else return res;
+        return res;
     }
 
     public void add(ListNode l1, ListNode l2,ListNode res,int step){
@@ -44,22 +30,59 @@ public class No2AddTwoNums {
         }
     }
 
-    public static void main(String[] args) {
-        ListNode add1 = new ListNode(2);
-        add1.next = new ListNode(4);
-        add1.next.next = new ListNode(3);
-
-        ListNode add2 = new ListNode(5);
-        add2.next = new ListNode(6);
-        add2.next.next = new ListNode(4);
-
-        ListNode res = new No2AddTwoNums().addTwoNumbers(add1, add2);
-
-        while (res.hasNext()){
-            System.out.print(res);
-            res = res.next;
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode();
+        ListNode cur = head;
+        int carry = 0;
+        while(l1!=null && l2!=null){
+            int num = (l1.val + l2.val + carry)%10;
+            carry = (l1.val + l2.val + carry)/10;
+            cur.next = new ListNode(num);
+            cur = cur.next;
+            l1 = l1.next;
+            l2 = l2.next;
         }
-        System.out.println(res);
+        cur.next = l1 == null ? l2 : l1;
+        while(carry != 0){
+            if(cur.next == null) {
+                cur.next = new ListNode(1);
+                break;
+            }
+            else{
+                int next_val = cur.next.val;
+                cur.next.val = (next_val + carry)%10;
+                carry = (next_val + carry)/10;
+                cur = cur.next;
+            }
+        }
+
+
+        return head.next;
+
+    }
+
+    public static void main(String[] args) {
+        ListNode add1 = new ListNode(3);
+        add1.next = new ListNode(7);
+//        ListNode cur = add1;
+//        for(int i = 0;i<6;i++){
+//            cur.next = new ListNode(9);
+//            cur = cur.next;
+//        }
+
+        ListNode add2 = new ListNode(9);
+        add2.next = new ListNode(2);
+//        cur = add2;
+//        for(int i = 0;i<3;i++){
+//            cur.next = new ListNode(9);
+//            cur = cur.next;
+//        }
+
+        System.out.println(ListNode.getString(add1));
+        System.out.println(ListNode.getString(add2));
+
+        ListNode res = new No2AddTwoNums().addTwoNumbers2(add1, add2);
+        System.out.println(ListNode.getString(res));
     }
 
 

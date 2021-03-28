@@ -71,7 +71,7 @@ public class BigNumberMultipy {
 
         //单独处理进位
         for(int k = result.length-1; k > 0; k--){
-            if(result[k] > 10){
+            if(result[k] >= 10){
                 result[k - 1] += result[k] / 10;
                 result[k] %= 10;
             }

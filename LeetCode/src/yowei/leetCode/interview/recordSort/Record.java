@@ -1,4 +1,4 @@
-package yowei.leetCode.interview.code;
+package yowei.leetCode.interview.recordSort;
 
 import java.io.Serializable;
 

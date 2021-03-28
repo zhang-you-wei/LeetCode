@@ -1,5 +1,6 @@
 package yowei.leetCode.array;
 
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -101,8 +102,8 @@ public class No42CollectRain {
                 if(stack.isEmpty()) break;
                 //得到较短的边
                 int border = Math.min(height[i],height[stack.peek()]);
-                int disance = i - stack.peek() - 1;
-                sum += ((border - bottom)*disance);
+                int distance = i - stack.peek() - 1;
+                sum += ((border - bottom)*distance);
 
             }
             stack.push(i);
@@ -143,7 +144,6 @@ public class No42CollectRain {
         }
         return sum;
     }
-
 
     public static void main(String[] args) {
         int[] aa = {3,2,1,1,1,2,3};

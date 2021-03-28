@@ -1,5 +1,7 @@
 package yowei.leetCode.linkedList;
 
+import yowei.leetCode.tools.ListNode;
+
 /**
  * 链表排序
  * 要求对数时间和常数空间，使用归并排序算法‘
@@ -8,14 +10,6 @@ package yowei.leetCode.linkedList;
 public class No148SortList {
 
     //定义链表节点
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
-
 
     public ListNode sortList(ListNode head) {
         return mergesort(head,null);
